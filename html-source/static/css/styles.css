@@ -1,0 +1,28 @@
+.container{
+    margin-top: 6em;
+}
+.my-footer{
+    margin-top: 2em;
+    text-align: center;
+    font-size: 80%;
+}
+.footer-text{
+    color: #c0c0c0;
+}
+.red-text{
+    color: red;
+}
+.notie-container {
+      box-shadow: none;
+}
+.datepicker {
+    z-index: 10000;
+}
+.swal2-confirm{
+    z-index: 1000;
+    
+}
+.swal2-cancel{
+    z-index: 1000;
+    
+}
