@@ -7,18 +7,19 @@ import (
 	"net/http"
 	"path/filepath"
 
-	"github.com/atom91/bookings/pkg/config"
-	"github.com/atom91/bookings/pkg/models"
+	"github.com/atom91/bookings/internal/config"
+	"github.com/atom91/bookings/internal/models"
+	"github.com/justinas/nosurf"
 )
 var app * config.AppConfig
 func NewTemplates(a *config.AppConfig){
    app=a
 }
-func addDefaultData(td *models.TemplateData) *models.TemplateData{
-	
+func addDefaultData(td *models.TemplateData, r *http.Request) *models.TemplateData{
+	td.CSRFToken=nosurf.Token(r)
 	return td
 }
-func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData) {
+func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData, r *http.Request) {
 	var tc map[string]*template.Template
 	if app.UseCache{
 		// get the template cache from the app config
@@ -34,7 +35,7 @@ func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData)
 	}
 
 	buf := new(bytes.Buffer)
-	td=addDefaultData(td)
+	td=addDefaultData(td, r)
 	err:= t.Execute(buf, td)
 	if err!=nil{
 		log.Println(err)

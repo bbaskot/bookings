@@ -1,16 +1,19 @@
 {{template "base" .}}
 {{define "content"}}
 <div class="container">
-    <h1>About, world!</h1>
-    <p>This came from template: {{index .StringMap "test"}}  {{index .StringMap "probica"}}</p>
-    <p>
-      {{if ne (index .StringMap "remote_ip") ""}}
-        Your remote IP Adress is {{index .StringMap "remote_ip"}}
-      {{else}}
-        I don't know your IP
-      {{end}}
+  <div class="row">
+    <div class="col">
+      <h1>O nama</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pulvinar sit amet mi eget consectetur. Duis id imperdiet nibh, ac ultrices ligula. Donec sit amet accumsan dolor, ut imperdiet sapien. Nunc euismod accumsan ultricies. Ut nec finibus odio. In a magna semper, pellentesque nulla consequat, pellentesque neque. Proin fringilla ipsum sit amet orci consectetur, sodales porta lorem lobortis. Donec non ipsum in massa dapibus laoreet. Nulla feugiat a ante et aliquam.
 
-    </p>
-  <div class="container">
+Nunc eget tincidunt dolor. Suspendisse tempus, quam sit amet ultrices eleifend, neque libero condimentum lorem, sed congue urna diam vitae massa. Mauris pretium ipsum a arcu tempor, cursus egestas purus placerat. Etiam ullamcorper, mi sit amet accumsan congue, leo massa facilisis ex, non dignissim tortor urna ac enim. Donec suscipit eget nisi nec maximus. In ut magna cursus, feugiat magna id, pretium enim. In sed pretium tellus. Phasellus ornare tempor turpis vitae tempor. Suspendisse potenti. Donec sed ante id enim iaculis vehicula. </p>
+    </div>
+  </div>
+  
+</div>
   
 {{end}}
