@@ -1,0 +1,39 @@
+{{template "base" .}}
+{{define "content"}}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Vasa rezervacija</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+    {{$res := index .Data "reservation"}}
+      <table class="table table-striped">
+        <tr>
+            <td>Ime:</td>
+            <td>{{$res.FirstName}} {{$res.LastName}}</td>
+        </tr>
+        <tr>
+            <td>Datum dolaska:</td>
+            <td>{{index .StringMap "start_date"}}</td>
+        </tr>
+        <tr>
+            <td>Datum odlaska:</td>
+            <td>{{index .StringMap "end_date"}}</td>
+        </tr>
+        <tr>
+            <td>Soba:</td>
+            <td>{{$res.Room.RoomName}}</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{{$res.Email}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+</div>
+  
+{{end}}

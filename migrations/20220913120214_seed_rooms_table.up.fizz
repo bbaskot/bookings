@@ -1,0 +1,1 @@
+sql("INSERT INTO rooms (room_name,created_at,updated_at) Values ('Jednokrevetna soba','2022-09-06 00:00:00','2022-09-06 00:00:00'),('Apartman','2022-09-06 00:00:00','2022-09-06 00:00:00')")

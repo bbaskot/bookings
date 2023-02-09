@@ -1,0 +1,3 @@
+sql("INSERT INTO restrictions (restriction_name,created_at,updated_at)
+Values ('Reservation','2022-09-06 00:00:00','2022-09-06 00:00:00'),
+('Owner block','2022-09-06 00:00:00','2022-09-06 00:00:00')")
